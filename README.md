@@ -107,8 +107,8 @@ Check out the live demo of the e-commerce website here:
 
 
 
-Product Page
-Screenshot of a product detail page.
+### Home Page
+![Home Page](client/public/HomePage.png)
 
 Admin Panel
 Screenshot of the admin dashboard.
