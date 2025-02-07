@@ -27,7 +27,7 @@ mongoose.connect(process.env.CONN_STR, {
   });
 
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173","https://e-commerce-frontend-ten-phi.vercel.app/auth/login"],
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Expires", "Pragma"],
   credentials: true,
