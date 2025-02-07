@@ -110,24 +110,25 @@ Check out the live demo of the e-commerce website here:
 ### Home Page
 ![Home Page](client/public/HomePage.png)
 
-### Admin Panel
-### Home Page
+
+### Products Page
 ![Products Page](client/public/Products.png)
 
-Contributing
+### Contributing
 If you'd like to contribute to this project, feel free to fork the repository, make changes, and submit a pull request. Contributions are always welcome!
 
-Steps to Contribute:
+### Steps to Contribute:
 Fork this repository.
 Create a new branch (git checkout -b feature-branch).
 Make your changes and commit them (git commit -m 'Add new feature').
 Push your changes (git push origin feature-branch).
 Create a pull request.
-License
+
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgements
-Stripe for payment gateway integration.
+### Acknowledgements
+Paypal for payment gateway integration.
 React for building the frontend and admin panel.
 Node.js and Express for building the backend.
 MongoDB for the database.
