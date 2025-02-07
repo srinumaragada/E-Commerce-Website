@@ -101,7 +101,8 @@ Check out the live demo of the e-commerce website here:
 
 Screenshots
 Home Page
-![Home Page](./client/profile/Products.png)
+![Home Page](https://raw.githubusercontent.com/your-username/repo-name/main/client/profile/HomePage.png)
+
 
 Product Page
 Screenshot of a product detail page.
