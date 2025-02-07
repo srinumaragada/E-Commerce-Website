@@ -101,7 +101,7 @@ Check out the live demo of the e-commerce website here:
 
 Screenshots
 Home Page
-![Home Page](./client/profile/HomePage.png)
+![Home Page](./client/profile/Products.png)
 
 Product Page
 Screenshot of a product detail page.
