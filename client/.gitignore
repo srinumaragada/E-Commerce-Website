@@ -15,6 +15,9 @@ dist-ssr
 
 # Ignore environment variables file
 .env
+node_modules/
+build/
+env/
 
 # Node modules
 node_modules/
