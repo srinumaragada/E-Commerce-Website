@@ -110,8 +110,9 @@ Check out the live demo of the e-commerce website here:
 ### Home Page
 ![Home Page](client/public/HomePage.png)
 
-Admin Panel
-Screenshot of the admin dashboard.
+### Admin Panel
+### Home Page
+![Products Page](client/public/Products.png)
 
 Contributing
 If you'd like to contribute to this project, feel free to fork the repository, make changes, and submit a pull request. Contributions are always welcome!
