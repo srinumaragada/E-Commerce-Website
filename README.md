@@ -99,9 +99,12 @@ Start the frontend server:
 Check out the live demo of the e-commerce website here:  
 [Live Demo](https://e-commerce-frontend-ten-phi.vercel.app)
 
-Screenshots
-Home Page
-![Home Page](https://raw.githubusercontent.com/your-username/repo-name/main/client/profile/HomePage.png)
+
+## Screenshots
+
+### Admin Panel
+![Admin Panel](client/public/AdminPanel.png)
+
 
 
 Product Page
