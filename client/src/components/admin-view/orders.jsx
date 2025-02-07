@@ -61,7 +61,7 @@ function AdminOrdersView() {
               ? orderList.map((orderItem) => (
                   <TableRow>
                     <TableCell>{orderItem?._id}</TableCell>
-                    <TableCell>{orderItem?.orderDate.split("T")[0]}</TableCell>
+                    <TableCell>{orderDetails?.orderDate ? orderDetails.orderDate.split("T")[0] : "N/A"}</TableCell>
                     <TableCell>
                       <Badge
                         className={`py-1 px-3 ${
