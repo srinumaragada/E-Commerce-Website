@@ -27,7 +27,7 @@ mongoose.connect(process.env.CONN_STR, {
   });
 
 app.use(cors({
-  origin: process.env.CLIENT_BASE_URL,
+  origin: [process.env.CLIENT_BASE_URL, "https://e-commerce-website-tawny-beta.vercel.app/auth/login"],
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Expires", "Pragma"],
   credentials: true,
