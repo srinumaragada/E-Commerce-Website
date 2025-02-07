@@ -6,11 +6,15 @@ const initialState = {
   featureImageList: [],
 };
 
+const baseUrl = import.meta.env.MODE === 'production' 
+  ? import.meta.env.VITE_API_URL_PROD 
+  : import.meta.env.VITE_API_URL_DEV;
+
 export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/common/feature/get`
+      `${baseUrl}/api/common/feature/get`
     );
     return response.data;
   }
@@ -20,26 +24,24 @@ export const addFeatureImage = createAsyncThunk(
   "/order/addFeatureImage",
   async (image) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/common/feature/add`,
+      `${baseUrl}/api/common/feature/add`,
       { image }
     );
     return response.data;
   }
 );
 
-// Add delete feature image thunk
+
 export const deleteFeatureImage = createAsyncThunk(
   "/order/deleteFeatureImage",
   async (imageId, { dispatch }) => {
     try {
-      // Send the image ID for deletion
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/common/feature/delete`,
-        { data: { id: imageId } } // Pass the image ID as 'id'
+        `${baseUrl}/api/common/feature/delete`,
+        { data: { id: imageId } } 
       );
 
       if (response.data.success) {
-        // After successful deletion, return the imageId to remove it from the local state
         return imageId;
       }
 

@@ -6,11 +6,15 @@ const initialState = {
   isLoading: false,
 };
 
+const baseUrl = import.meta.env.MODE === 'production' 
+  ? import.meta.env.VITE_API_URL_PROD 
+  : import.meta.env.VITE_API_URL_DEV;
+
 export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ userId, productId, quantity }) => {
     const response = await axios.post(
-      "http://localhost:5000/api/shop/cart/add",
+      `${baseUrl}/api/shop/cart/add`,
       {
         userId,
         productId,
@@ -26,7 +30,7 @@ export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async (userId) => {
     const response = await axios.get(
-      `http://localhost:5000/api/shop/cart/get/${userId}`
+      `${baseUrl}/api/shop/cart/get/${userId}`
     );
 
     return response.data;
@@ -37,7 +41,7 @@ export const deleteCartItem = createAsyncThunk(
   "cart/deleteCartItem",
   async ({ userId, productId }) => {
     const response = await axios.delete(
-      `http://localhost:5000/api/shop/cart/${userId}/${productId}`
+      `${baseUrl}/api/shop/cart/${userId}/${productId}`
     );
 
     return response.data;
@@ -48,7 +52,7 @@ export const updateCartQuantity = createAsyncThunk(
   "cart/updateCartQuantity",
   async ({ userId, productId, quantity }) => {
     const response = await axios.put(
-      "http://localhost:5000/api/shop/cart/update-cart",
+      `${baseUrl}/api/shop/cart/update-cart`,
       {
         userId,
         productId,

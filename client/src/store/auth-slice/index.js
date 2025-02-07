@@ -7,12 +7,16 @@ const initialState = {
   user: null,
 };
 
+const baseUrl = import.meta.env.MODE === 'production' 
+  ? import.meta.env.VITE_API_URL_PROD 
+  : import.meta.env.VITE_API_URL_DEV;
+
 export const registerUser = createAsyncThunk(
   "/auth/register",
 
   async (formData) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/auth/register`,
+      `${baseUrl}/api/auth/register`,
       formData,
       {
         withCredentials: true,
@@ -28,7 +32,7 @@ export const loginUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/auth/login`,
+      `${baseUrl}/api/auth/login`,
       formData,
       {
         withCredentials: true,
@@ -44,7 +48,7 @@ export const logoutUser = createAsyncThunk(
 
   async () => {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/auth/logout`,
+      `${baseUrl}/api/auth/logout`,
       {},
       {
         withCredentials: true,
@@ -60,7 +64,7 @@ export const checkAuth = createAsyncThunk(
 
   async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/auth/check-auth`,
+      `${baseUrl}/api/auth/check-auth`,
       {
         withCredentials: true,
         headers: {

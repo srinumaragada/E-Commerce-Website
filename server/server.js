@@ -25,10 +25,10 @@ mongoose.connect(process.env.CONN_STR, {
     console.error("MongoDB connection error:", err.message);
     process.exit(1);
   });
-
+  
 app.use(cors({
-  origin: [process.env.CLIENT_BASE_URL, "https://e-commerce-website-tawny-beta.vercel.app/auth/login"],
-  methods: ["GET", "POST", "DELETE", "PUT"],
+  origin: ["http://localhost:5173"],
+   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Expires", "Pragma"],
   credentials: true,
 }));

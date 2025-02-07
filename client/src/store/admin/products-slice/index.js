@@ -6,11 +6,15 @@ const initialState = {
   productList: [],
 };
 
+const baseUrl = import.meta.env.MODE === 'production' 
+  ? import.meta.env.VITE_API_URL_PROD 
+  : import.meta.env.VITE_API_URL_DEV;
+
 export const addNewProduct = createAsyncThunk(
   "/products/addnewproduct",
   async (formData) => {
     const result = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/admin/products/add`,
+      `${baseUrl}/api/admin/products/add`,
       formData,
       {
         headers: {
@@ -27,7 +31,7 @@ export const fetchAllProducts = createAsyncThunk(
   "/products/fetchAllProducts",
   async () => {
     const result = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/admin/products/get`
+      `${baseUrl}/api/admin/products/get`
     );
 
     return result?.data;
@@ -38,7 +42,7 @@ export const editProduct = createAsyncThunk(
   "/products/editProduct",
   async ({ id, formData }) => {
     const result = await axios.put(
-      `${import.meta.env.VITE_API_URL}/api/admin/products/edit/${id}`,
+      `${baseUrl}/api/admin/products/edit/${id}`,
       formData,
       {
         headers: {
@@ -55,7 +59,7 @@ export const deleteProduct = createAsyncThunk(
   "/products/deleteProduct",
   async (id) => {
     const result = await axios.delete(
-      `${import.meta.env.VITE_API_URL}/api/admin/products/delete/${id}`
+      `${baseUrl}/api/admin/products/delete/${id}`
     );
 
     return result?.data;
