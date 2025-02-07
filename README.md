@@ -77,7 +77,8 @@ PORT=5000
 MODE=development
 
 
-**FRontEnd**
+**FrontEnd**
+
 VITE_API_URL_DEV=http://localhost:5000
 VITE_API_URL_PROD=<your-production-url>
 
@@ -100,7 +101,7 @@ Check out the live demo of the e-commerce website here:
 
 Screenshots
 Home Page
-![Home Page](./screenshots/homepage.png)
+![Home Page](./client/profile/AdminPanel.png)
 
 Product Page
 Screenshot of a product detail page.
