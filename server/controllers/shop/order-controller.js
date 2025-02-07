@@ -3,9 +3,16 @@ const Order = require("../../models/Order");
 const Cart = require("../../models/Cart");
 const Product = require("../../models/Product");
 
+// Dynamic PayPal URLs based on environment
+const PAYPAL_RETURN_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.PAYPAL_RETURN_URL_PROD
+    : process.env.PAYPAL_RETURN_URL_DEV;
 
-const PAYPAL_RETURN_URL = process.env.PAYPAL_RETURN_URL_DEV;
-const PAYPAL_CANCEL_URL = process.env.PAYPAL_CANCEL_URL_DEV;
+const PAYPAL_CANCEL_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.PAYPAL_CANCEL_URL_PROD
+    : process.env.PAYPAL_CANCEL_URL_DEV;
 
 const createOrder = async (req, res) => {
   try {
@@ -94,10 +101,11 @@ const createOrder = async (req, res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Some error occurred!",
     });
   }
 };
+
 
 const capturePayment = async (req, res) => {
   try {
